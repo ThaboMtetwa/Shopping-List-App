@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="shopping-list.css">
+    <title>Shopping List App</title>
+  </head>
+  <body class="container bg-secondary mt-2">
+    <div class="border border-2 rounded p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-1">
+                    <img src="shopping-cart.png" width="61" height="60" class="mr-auto rounded mt-1">
+                </div>
+                <div class="col-8">
+                    <h1 class="col mt-1">Shopping List</h1>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                    </div>
+                    <div class="col" id="by-thabo">
+                        <h5>by Thabo Mtetwa</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="inputArea mt-3">
+            <div>
+                <h3 id="item">Item:</h3>
+                <input type="text" id="item-input" size="30" placeholder="Add item here">
+            </div>
+            <div>
+                <h3 id="store">Store:</h3>
+                <input type="text" id="store-input" size="30" placeholder="E.g Costco, Superstore, etc.">
+            </div>
+            <div>
+                <h3 id="date">Date:</h3>
+                <input type="date" id="date-input" size="30" placeholder="Add date for shopping trip">
+            </div>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-dark" id="submit">Submit</button>
+        </div>
+    </div>    
+    <div class="ml-1"  id="list-container">
+    </div>
+
+<script>
+let listArea = document.getElementById("list-container");
+let addButton = document.getElementById("submit");
+
+addButton.addEventListener("click", function() {
+  let itemInput = document.getElementById("item-input");
+  let storeInput = document.getElementById("store-input");
+  let dateInput = document.getElementById("date-input");
+  let threeItems = itemInput.value + ", " + storeInput.value + ", " + dateInput.value;
+  var newItem = document.createElement("li");
+  newItem.innerHTML = threeItems;
+  listArea.appendChild(newItem);
+  newItem.setAttribute("style", "padding: 5px;")
+  itemInput.value = "";
+  storeInput.value = "";
+  dateInput.value = "";
+  addDelButton(newItem);
+  ul.appendChild(newItem);
+});
+
+    function addDelButton(newItem) {
+    var deleteButton = newItem.appendChild(document.createElement("button"));
+    deleteButton.innerHTML = " X ";
+    deleteButton.setAttribute("style", "width:32px; position:fixed; left:500px; color:black; font-weight:900; border-radius:5px;");
+    deleteButton.onclick = function() {
+        this.parentElement.remove();
+    }}
+
+ </script>
+
+  </body>
+</html>
+

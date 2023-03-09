@@ -1,0 +1,33 @@
+.inputArea {
+    display: flex;
+    flex-direction: row;
+}
+#list-container {
+    font-size: 20px;
+}
+#by-thabo {
+    margin-left: 16px;
+
+}
+
+#item-input {
+    margin-right: 25px;
+    
+}
+#store-input {
+    margin-right: 25px;
+    
+}
+#date-input {
+    margin-right: 25px;
+}
+#list-container {
+    
+}
+#button {
+    margin-left: 10px;
+}
+#submit {
+    margin-bottom: 15px;
+
+}
